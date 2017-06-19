@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Checkpoint Challenge 5</title>
+    <script src="vendors/angular.min.js" charset="utf-8"></script>
+    <script src="scripts/messageController.js" charset="utf-8"></script>
+    <script src="scripts/services/messageService.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="vendors/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+  </head>
+  <body ng-app="myApp" ng-controller="MessageController as mc" ng-init="mc.getMessages()">
+    <h1>Checkpoint Challenge 5</h1>
+    <div>
+      <input type="text" ng-model="mc.nameIn" placeholder="Enter your name...">
+      <input type="text" ng-model="mc.messageIn" placeholder="Enter your message...">
+      <button ng-click="mc.sendMessage()">Submit Message</button>
+    </div>
+    <div ng-repeat="data in mc.data">
+      <p>Name: {{ data.name }}</p>
+      <p>Name: {{ data.message }}</p>
+      <hr>
+    </div>
+  </body>
+</html>
